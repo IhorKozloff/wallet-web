@@ -18,10 +18,8 @@ export class UserService {
     static async register (userData: IRegisterData) {
         try {
             const regResult = await axios.post(`${baseUrl}/register`, userData);
-            console.log('Все норм, ниже ответ от сервера с успешной операцией');
-            console.log(regResult);
     
-            if (regResult.status === 201 && regResult.statusText === "Created") {
+            if (regResult.status === 201 && regResult.statusText === 'Created') {
                 return regResult.data;
             }
 
@@ -35,7 +33,7 @@ export class UserService {
                 frontEndError: {
                     message: `${error}`
                 }
-            }
+            };
         }
     }
 }

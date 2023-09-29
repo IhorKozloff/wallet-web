@@ -63,7 +63,7 @@ export const userSlice = createSlice({
         builder.addCase(fetchLogin.rejected, (state, action) => {
             state.errorLogin = `${action.payload}`;
             state.isLoading = false;
-            Notiflix.Notify.failure('Oops, something wrong, try again later ;)');
+            Notiflix.Notify.failure('Please try one more tome, maybe server has been sleeping.)');
         });
 
         builder.addCase(fetchLogout.fulfilled, (state) => {
