@@ -10,7 +10,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 
 const root = document.getElementById('root') as HTMLDivElement;
 ReactDOM.createRoot(root).render(
-    <HashRouter basename={process.env.PUBLIC_URL}>
+    <HashRouter basename="/wallet-web">
         <Provider store={globalStore}>
             <PersistGate loading={null} persistor={persistor}>
                 <GlobalStyle></GlobalStyle>
