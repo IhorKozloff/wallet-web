@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { App } from 'components/App';
 import './index.css';
-import { BrowserRouter } from 'react-router-dom';
+import {HashRouter} from 'react-router-dom';
 import { GlobalStyle } from './stylesheets/GlobalStyles';
 import { Provider } from 'react-redux';
 import { globalStore, persistor } from 'redux/globalStore';
@@ -13,9 +13,9 @@ ReactDOM.createRoot(root).render(
     <Provider store={globalStore}>
         <PersistGate loading={null} persistor={persistor}>
             <GlobalStyle></GlobalStyle>
-            <BrowserRouter basename="/wallet-web">
+            <HashRouter basename="/wallet-web">
                 <App></App>
-            </BrowserRouter>
+            </HashRouter>
         </PersistGate>
     </Provider>
 
