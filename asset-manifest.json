@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.2a59a2f0.css",
-    "main.js": "/static/js/main.cef56aa7.js",
+    "main.js": "/static/js/main.46890fc6.js",
     "static/media/Circe-Regular.ttf": "/static/media/Circe-Regular.814e4dd4329ffdb6c9ed.ttf",
     "static/media/Circe-Bold.ttf": "/static/media/Circe-Bold.63396ee791f60623acbf.ttf",
     "static/media/statistic-plug.png": "/static/media/statistic-plug.b5f875fa8cfd745ec97a.png",
@@ -13,10 +13,10 @@
     "static/media/arrow.png": "/static/media/arrow.7cd611273ebe44f91be8.png",
     "index.html": "/index.html",
     "main.2a59a2f0.css.map": "/static/css/main.2a59a2f0.css.map",
-    "main.cef56aa7.js.map": "/static/js/main.cef56aa7.js.map"
+    "main.46890fc6.js.map": "/static/js/main.46890fc6.js.map"
   },
   "entrypoints": [
     "static/css/main.2a59a2f0.css",
-    "static/js/main.cef56aa7.js"
+    "static/js/main.46890fc6.js"
   ]
 }
