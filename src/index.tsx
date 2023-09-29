@@ -13,7 +13,7 @@ ReactDOM.createRoot(root).render(
     <Provider store={globalStore}>
         <PersistGate loading={null} persistor={persistor}>
             <GlobalStyle></GlobalStyle>
-            <BrowserRouter basename="/wallet-finance-application">
+            <BrowserRouter basename="/wallet-web">
                 <App></App>
             </BrowserRouter>
         </PersistGate>
