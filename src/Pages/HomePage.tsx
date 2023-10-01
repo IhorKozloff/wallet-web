@@ -34,26 +34,36 @@ export const HomePage = () => {
             <Media query="(min-width: 1280px)" render={() =>
                 (
                     <Section style={{width: '100%', paddingTop: '46px', paddingLeft: '69px', flexDirection: 'column-reverse'}}>
-                        <Container>
+                        <Container style={{height: '100%'}}>
                             {transactions && transactions.length !== 0 && <TransactionTable/>}
-                            {(!transactions || transactions.length === 0) && 
-                                <div style={{position: 'fixed', bottom: '18px', right: '200px'}}>
-                                    <TransactionTablePlugIn/>
-                                </div>}
+                            {(!transactions || transactions.length === 0) && <TransactionTablePlugIn screen="desktop"/>}
                         </Container>   
                         <Container style={{width: '1246px', position: 'fixed', bottom: '20px', left: '50%', transform: 'translateX(-50%)'}}>
                             <FormBar/>
-                        </Container>                        
-                        
+                        </Container>                          
                     </Section>
                 )}
             />
-            <Media query="(max-width: 1279px)" render={() =>
+            <Media query="(min-width: 768px) and (max-width: 1279px)" render={() =>
                 (
                     <Section className="home-section" style={{height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
                         <Container className="home-container">
                             {transactions && transactions.length !== 0 && <TransactionTable/>}
-                            {(!transactions || transactions.length === 0) && <TransactionTablePlugIn/>}
+                            {(!transactions || transactions.length === 0) && <TransactionTablePlugIn screen="tablet"/>}
+                        </Container>
+                        <Container style={{position: 'fixed', bottom: '20px', left: '50%', transform: 'translateX(-50%)'}}>
+                            <FormBar/>
+                        </Container>
+                    </Section>
+                )}
+            />
+
+            <Media query="(max-width: 767px)" render={() =>
+                (
+                    <Section className="home-section" style={{height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
+                        <Container className="home-container">
+                            {transactions && transactions.length !== 0 && <TransactionTable/>}
+                            {(!transactions || transactions.length === 0) && <TransactionTablePlugIn screen="mobile"/>}
                         </Container>
                         <Container style={{position: 'fixed', bottom: '20px', left: '50%', transform: 'translateX(-50%)'}}>
                             <FormBar/>

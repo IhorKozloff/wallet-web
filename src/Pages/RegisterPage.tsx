@@ -4,11 +4,12 @@ import { fetchLogin,  } from 'redux/operations/authOperations';
 import { useAppDispatch } from 'hooks/useSelectorAndDispatch';
 import { useState } from 'react';
 import { FullScreenLoader } from 'components';
-import { IRegisterData, IRegisterDataInForm } from 'types/user';
+import { IRegisterData, IRegisterDataInForm, IRegisterError } from 'types/user';
 import { UserService } from 'API/UserService';
 import React from 'react';
 import { saveRegisterData } from 'redux/slices/authSlice';
 import { omit } from 'lodash';
+import Notiflix from 'notiflix';
 
 export const RegisterPage = () => {
 
@@ -30,13 +31,17 @@ export const RegisterPage = () => {
         setLoaderStatus(true);
 
         const result = await UserService.register(serverSendData);
-        if (result.frontEndError) {
-            return <div>{result.frontEndError.message}</div>
-        }
-        
-        setLoaderStatus(false);
 
-        dispatch(fetchLogin({email: serverSendData.email, password: serverSendData.password}));
+        setLoaderStatus(false);
+        
+        const errorResult = result as IRegisterError;
+
+        if (errorResult.frontEndError) {
+            Notiflix.Notify.failure(errorResult.frontEndError.message);
+        } else {
+            Notiflix.Notify.success("Registered!");
+            dispatch(fetchLogin({email: serverSendData.email, password: serverSendData.password}));
+        }
     };
 
     return (

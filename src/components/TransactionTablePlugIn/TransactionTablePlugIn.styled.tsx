@@ -1,25 +1,21 @@
 import styled from 'styled-components';
 import plugImg from '../../img/transaction-plug.png';
-import arrow from '../../img/arrow.png';
 
-export const PlugWrapper = styled.div`
+interface IProps {
+    screen: 'mobile' | 'tablet' | 'desktop';
+}
+
+export const PlugWrapper = styled.div<IProps>`
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    ${(props) => props.screen === 'tablet' && 'height: 500px;'}
+    ${(props) => props.screen === 'mobile' && 'height: 250px;'}
 `;
 
-export const ArrowWrapper = styled.div`
-    width: 150px;
-    height: 50px;
-
-    background-image: url('${arrow}');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-`;
 export const ImageBox = styled.div`
     width: 100%;
     height: 50%;
@@ -34,4 +30,11 @@ export const TextBox = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+`;
+
+export const TextBoxTitle = styled.p<IProps>`
+    font-size: 36px;
+    font-weight: 500;
+    ${(props) => props.screen === 'tablet' && 'font-size: 28px; margin-top: 20px;'}
+    ${(props) => props.screen === 'mobile' && 'font-size: 18px; margin-top: 20px;'}
 `;

@@ -10,3 +10,17 @@ export interface IRegisterData extends ILoginData {
 export interface IRegisterDataInForm extends Omit<IRegisterData, 'name'> {
     firstName: string;
 }
+
+export interface IRegisterFullfiled {
+    user: {
+        email: string;
+        token: string;
+        id: string;
+    }
+}
+
+export interface IRegisterError {
+    frontEndError: {
+        message: string;
+    }
+}
