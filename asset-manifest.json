@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/wallet-web/static/css/main.1ef4eeeb.css",
-    "main.js": "/wallet-web/static/js/main.57176663.js",
+    "main.js": "/wallet-web/static/js/main.4974534a.js",
     "static/media/Circe-Regular.ttf": "/wallet-web/static/media/Circe-Regular.814e4dd4329ffdb6c9ed.ttf",
     "static/media/Circe-Bold.ttf": "/wallet-web/static/media/Circe-Bold.63396ee791f60623acbf.ttf",
     "static/media/statistic-plug.png": "/wallet-web/static/media/statistic-plug.b5f875fa8cfd745ec97a.png",
@@ -10,13 +10,12 @@
     "static/media/transaction-plug.png": "/wallet-web/static/media/transaction-plug.843553ac2ddb42215dc9.png",
     "static/media/auth-page-section-decor-main-image-desctop.png": "/wallet-web/static/media/auth-page-section-decor-main-image-desctop.671535cdac54767bd803.png",
     "static/media/auth-page-section-decor-main-image-tablet.png": "/wallet-web/static/media/auth-page-section-decor-main-image-tablet.48127139a14c04c39295.png",
-    "static/media/arrow.png": "/wallet-web/static/media/arrow.7cd611273ebe44f91be8.png",
     "index.html": "/wallet-web/index.html",
     "main.1ef4eeeb.css.map": "/wallet-web/static/css/main.1ef4eeeb.css.map",
-    "main.57176663.js.map": "/wallet-web/static/js/main.57176663.js.map"
+    "main.4974534a.js.map": "/wallet-web/static/js/main.4974534a.js.map"
   },
   "entrypoints": [
     "static/css/main.1ef4eeeb.css",
-    "static/js/main.57176663.js"
+    "static/js/main.4974534a.js"
   ]
 }
