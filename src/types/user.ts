@@ -19,7 +19,7 @@ export interface IRegisterFullfiled {
     }
 }
 
-export interface IRegisterError {
+export interface IAuthError {
     frontEndError: {
         message: string;
     }

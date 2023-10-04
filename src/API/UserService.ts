@@ -1,23 +1,20 @@
 import axios from 'axios';
 import { constantValues } from 'config/constantValues';
-import { ILoginData, IRegisterData, IRegisterError, IRegisterFullfiled } from 'types/user';
+import { ILoginData, IRegisterData, IAuthError, IRegisterFullfiled } from 'types/user';
 
 const baseUrl = `${constantValues.GENERAL.baseAPIUrl}/auth-api`;
-
-
 
 export class UserService {
     
     static async login (userData: ILoginData) {
-        const response  = await axios.post(`${baseUrl}/login`, userData);
-        return response;
+        return await axios.post(`${baseUrl}/login`, userData);
     }
 
     static async logout (token = '') {
         await axios.get(`${baseUrl}/logout`, { headers: { Authorization: `Bearer ${token}`} });
     }
 
-    static async register (userData: IRegisterData): Promise<IRegisterFullfiled | IRegisterError> {
+    static async register (userData: IRegisterData): Promise<IRegisterFullfiled | IAuthError> {
         try {
             const regResult = await axios.post(`${baseUrl}/register`, userData);
     

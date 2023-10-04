@@ -4,11 +4,9 @@ import { fetchLogin,  } from 'redux/operations/authOperations';
 import { useAppDispatch } from 'hooks/useSelectorAndDispatch';
 import { useState } from 'react';
 import { FullScreenLoader } from 'components';
-import { IRegisterData, IRegisterDataInForm, IRegisterError } from 'types/user';
+import { IAuthError, IRegisterData, IRegisterDataInForm } from 'types/user';
 import { UserService } from 'API/UserService';
 import React from 'react';
-import { saveRegisterData } from 'redux/slices/authSlice';
-import { omit } from 'lodash';
 import Notiflix from 'notiflix';
 
 export const RegisterPage = () => {
@@ -34,7 +32,7 @@ export const RegisterPage = () => {
 
         setLoaderStatus(false);
         
-        const errorResult = result as IRegisterError;
+        const errorResult = result as IAuthError;
 
         if (errorResult.frontEndError) {
             Notiflix.Notify.failure(errorResult.frontEndError.message);
